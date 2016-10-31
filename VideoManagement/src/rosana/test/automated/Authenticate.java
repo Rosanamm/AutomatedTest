@@ -28,19 +28,19 @@ public class Authenticate {
 	/**
 	 * testes  serem realizados - Módulo Login
 	 */
-	@Ignore
+	@Test
 		public void TestLogin() throws InterruptedException, IOException {
 		page.Login("avaliacao_qa_samba@sambatech.com.br", "12345678",false);		
 		assertTrue("Não logou", page.ValidationLogin());
 	}
 	
-	@Ignore
+	@Test
 	public void TestUserInexistente() throws InterruptedException, IOException {
 		page.Login("samba@sambatech.com.br", "12345678",false);		
 		assertTrue("Não foi para tela de erro", page.ValidationErroUser());
 	}
 	
-	@Ignore
+	@Test
 	public void TestSenhaFalsa() throws InterruptedException, IOException {
 		page.Login("avaliacao_qa_samba@sambatech.com.br", "1234",false);		
 		assertTrue("Não foi para tela de erro", page.ValidationErrorPsw());
